@@ -1,8 +1,10 @@
-## Running the Cylera task
+## Running the Cylera Task
 
-This toolkit brings in data from Cylera
+This toolkit gets data from Cylera.
 
-To run this task you need the following information from Cylera:
+**Run the Cylera Task**
+
+To run this task, use the following Cylera information:
 
 1. Cylera instance hostname
 2. Cylera api user email
@@ -10,18 +12,20 @@ To run this task you need the following information from Cylera:
 
 ## Command Line
 
-See the main Toolkit for instructions on running tasks. For this task, if you leave off the Kenna API Key and Kenna Connector ID, the task will create a json file in the default or specified output directory. You can review the file before attempting to upload to the Kenna directly.
+**Note:** For instructions on running tasks, see the main Toolkit page.
 
-Recommended Steps:
+For this task, you can leave off the Kenna API Key and Kenna Connector ID, so the task creates a .JSON file in the default or specified output directory. You can then review the file, before you upload it directly to the Cisco.
 
-1. Run with Cylera Keys only to ensure you are able to get data properly from the scanner
-2. Review output for expected data
-3. Create Kenna Data Importer connector in Kenna (example name: Cylera KDI)
-4. Manually run the connector with the json from step 1
-5. Click on the name of the connector to get the connector id
-6. Run the task with Cylera Keys and Kenna Key/connector id
+**Use these Recommended Steps:**
 
-Complete list of Options:
+1. To ensure you can get data properly from the scanner, run it with Cylera keys only. 
+2. Review the data output to ensure you got the expected data.
+3. Create the Kenna Data Importer connector in Cisco Vunerability Management  (for example, name it: **Cylera KDI**).
+4. From Step 1, run the connector manually with the .JSON file. 
+5. To get the connector ID, click the name of the connector. 
+6. Run the task with Cylera Keys and Kenna Key/connector ID.
+
+## Complete list of Options:
 
 | Option | Required | Description | default |
 | --- | --- | --- | --- |
@@ -47,8 +51,9 @@ Complete list of Options:
 | cylera_page_size | false | Controls number of results in each response. Max 100. | 100 |
 | kenna_api_key | false | Kenna API Key for use with connector option | n/a |
 | kenna_api_host | false | Kenna API Hostname if not US shared | api.kennasecurity.com |
-| kenna_connector_id | false | If set, we'll try to upload to this connector | n/a |
-| output_directory | false | If set, will write a file upon completion. Path is relative to #{$basedir} | output/cylera |
+| kenna_connector_id | false | If set, it tries to upload to this connector | n/a |
+| output_directory | false | If set, it writes a file after it is complete 
+| Path is relative to #{$basedir} | output/cylera_id| 
 
 ## Data Mappings
 
